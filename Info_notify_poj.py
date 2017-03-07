@@ -64,7 +64,7 @@ class News(db.Model):
         return formate_jsion
 
 
-@app.route("/")
+@app.route("/test")
 def index():
     return render_template("index.html")
 
