@@ -1,17 +1,76 @@
-#coding:utf8
+# coding:utf8
 from __future__ import unicode_literals
 from flask import Flask
+import os, json
 from flask import (
     g, request, redirect, flash, Response, render_template, Markup)
-app = Flask(__name__)
 
-@app.route("/test")
+from flask.ext.sqlalchemy import SQLAlchemy
+
+basedir = os.path.abspath(os.path.dirname(__file__))
+SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(basedir, "data.db")
+
+app = Flask(__name__)
+app.config["SQLALCHEMY_DATABASE_URI"] = SQLALCHEMY_DATABASE_URI
+app.config["SQLALCHEMY_COMMIT_ON_TEARDOWN"] = True
+db = SQLAlchemy(app)
+
+
+class Contact(db.Model):
+    """
+    Contact 模型
+    """
+    __tablename__ = 'contact'
+    contact_id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(20))
+    student_id = db.Column(db.String(20))
+    phone = db.Column(db.String(15))
+    room_id = db.Column(db.String(20))
+    is_roon_leader = db.Column(db.String(2))
+    gender = db.Column(db.String(2))
+    address = db.Column(db.String(50))
+
+    def get_json(self):
+        formate_jsson = {'contact_id': self.contact_id,
+                         'name': self.name,
+                         'student_id': self.student_id,
+                         'room_id': self.room_id,
+                         'phone': self.phone,
+                         'is_roon_leader': self.is_roon_leader,
+                         'gender': self.gender,
+                         'address': self.address}
+        return formate_jsson
+
+
+class News(db.Model):
+    """
+    news模型
+    """
+    id = db.Column(db.String, primary_key=True)
+    news_id = db.Column(db.String)
+    post_time = db.Column(db.DateTime)
+    post_nickname = db.Column(db.String(20))
+    news_title = db.Column(db.String(150))
+    news_content = db.Column(db.String(1000))
+
+    def get_json(self):
+        formate_jsion = {
+            'news_id': self.news_id,
+            "post_time": self.post_time,
+            "post_nickname": self.post_time,
+            "news_titile": self.news_title,
+            "news_content": self.news_content
+        }
+        return formate_jsion
+
+
+@app.route("/")
 def index():
     return render_template("index.html")
 
 @app.route("/info/get/news")
 def news_info():
-    rs="""
+    rs = """
     [
 {"发送时间":"2016/3/1","标题":"通知聚会1","内容":"1又到一年春天的时候，计划在2-7号，班级举办一次聚会。地点在万宜广场，时间晚上6:30如果不能来请联系周耀","有效期到":"2017/3/7"," 发送人真实姓名":"周耀1","发送人昵称":"住羽光1"},
 {"发送时间":"2016/3/2","标题":"通知聚会2","内容":"2又到一年春天的时候，计划在2-7号，班级举办一次聚会。地点在万宜广场，时间晚上6:30如果不能来请联系周耀","有效期到":"2017/3/8"," 发送人真实姓名":"周耀2","发送人昵称":"住羽光2"},
@@ -24,26 +83,16 @@ def news_info():
 
 ]
     """
-    return render_template("news.html",news=rs)
+    return render_template("news.html", news=rs)
 
 @app.route("/info/get/contact")
 def contact():
-    rs = """
-[
-{"编号":"0","姓名":"张一1","学号":"45121600","联系方式":"18892334567","寝室号":"3栋225","是否室长":"是","性别":"女","地址":"河南省许昌市禹州市1"},
-{"编号":"1","姓名":"张一2","学号":"45121601","联系方式":"18892334568","寝室号":"14栋426","是否室长":"否","性别":"男","地址":"河南省许昌市禹州市2"},
-{"编号":"2","姓名":"张一3","学号":"45121602","联系方式":"18892334569","寝室号":"3栋214","是否室长":"是","性别":"女","地址":"河南省许昌市禹州市3"},
-{"编号":"3","姓名":"张一4","学号":"45121603","联系方式":"18892334570","寝室号":"3栋225","是否室长":"否","性别":"女","地址":"河南省许昌市禹州市4"},
-{"编号":"4","姓名":"张一5","学号":"45121604","联系方式":"18892334571","寝室号":"6栋211","是否室长":"是","性别":"男","地址":"河南省许昌市禹州市5"},
-{"编号":"5","姓名":"张一6","学号":"45121605","联系方式":"18892334572","寝室号":"3栋212","是否室长":"是","性别":"女","地址":"河南省许昌市禹州市6"},
-{"编号":"6","姓名":"张一7","学号":"45121606","联系方式":"18892334573","寝室号":"14栋432","是否室长":"否","性别":"男","地址":"河南省许昌市禹州市7"},
-{"编号":"7","姓名":"张一8","学号":"45121607","联系方式":"18892334574","寝室号":"15栋611","是否室长":"否","性别":"女","地址":"河南省许昌市禹州市8"},
-{"编号":"8","姓名":"张一9","学号":"45121608","联系方式":"18892334575","寝室号":"3栋222","是否室长":"否","性别":"女","地址":"河南省许昌市禹州市9"},
-{"编号":"9","姓名":"张一10","学号":"45121609","联系方式":"18892334576","寝室号":"14栋426","是否室长":"否","性别":"男","地址":"河南省许昌市禹州市10"},
-
-]
-    """
-    return render_template("contact.html",contact=rs)
+    contact_json = []
+    all_contact = Contact.query.all()
+    for x in all_contact:
+        contact_json.append(x.get_json())
+    # return render_template("contact.html", contact=json.dumps(contact_json, ensure_ascii=False))
+    return json.dumps(contact_json, ensure_ascii=False)
 
 @app.errorhandler(404)
 def page_not_found(error):
