@@ -1,6 +1,6 @@
 # coding:utf8
 from __future__ import unicode_literals
-from flask import Flask
+from flask import Flask,url_for
 import os, json
 from flask import (
     g, request, redirect, flash, Response, render_template, Markup)
@@ -64,15 +64,15 @@ class News(db.Model):
         return formate_jsion
 
 
-@app.route("/test")
+@app.route("/")
 def index():
-    return render_template("index.html")
+    return redirect(url_for("news_info"))
 
 
 @app.route("/info/get/news")
 def news_info():
     all_news = News.query.all()
-    return render_template("Materialize1.html", news=all_news)
+    return render_template("News.html", news=all_news)
 
 
 @app.route("/info/get/contact")
@@ -90,9 +90,9 @@ def page_not_found(error):
     return render_template('page_not_found.html'), 404
 
 
-@app.route("/")
+@app.route("/test")
 def test():
-    return render_template("Materialize.html")
+     return redirect(url_for("news_info"))
 
 
 @app.route("/tonggao")
