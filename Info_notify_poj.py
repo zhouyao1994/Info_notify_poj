@@ -68,7 +68,6 @@ class News(db.Model):
 def index():
     return render_template("index.html")
 
-
 @app.route("/info/get/news")
 def news_info():
     rs = """
@@ -86,7 +85,6 @@ def news_info():
     """
     return render_template("news.html", news=rs)
 
-
 @app.route("/info/get/contact")
 def contact():
     contact_json = []
@@ -100,6 +98,12 @@ def contact():
 def page_not_found(error):
     return render_template('page_not_found.html'), 404
 
+@app.route("/")
+def  test():
+    return render_template("Materialize.html")
+@app.route("/tonggao")
+def test2():
+    return render_template("Materialize1.html")
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)

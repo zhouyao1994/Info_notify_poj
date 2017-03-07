@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://www.materialscss.com/dialogs -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="
+  Materialize是基于谷歌Material Design Language（MDL）设计语言所构建的一套CSS/HTML库。Materialize中文网致力于为广大国内开发者提供详尽的中文文档、代码示例等，助力开发者掌握并使用这一套框架。">
+  <meta name="keywords" content="Material,Materialize，MDL，CSS,CSS框架,CSS framework,javascript,Material开发,Material代码,Material入门">
+  <meta name="robots" content="index,follow">
+  <meta name="application-name" content="Materialize中文网">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="author" content="Materialize中文网">
+  <title>Materialize</title>
+  <link rel="stylesheet" href="/static/materialize.min.css">
+  <link rel="stylesheet" href="/static/index.css">
+  <link rel="stylesheet" href="/static/prism.css">
+</head>
+
+<body>
+<div class="container"><a href="http://www.materialscss.com/dialogs#" id="nav-button" class="button-collapse top-nav circle hide-on-large-only"><i class="mdi-navigation-menu"></i></a></div>
+<aside id="nav-mobile" class="sidebar">
+  <section class="logo">
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="114px" height="56.7px" viewBox="0 0 114 56.7" enable-background="new 0 0 114 56.7" xml:space="preserve">
+<g enable-background="new    ">
+	<g enable-background="new    ">
+		<defs>
+			<ellipse id="SVGID_1_" enable-background="new    " cx="538.6" cy="28.3" rx="0" ry="28.2"></ellipse>
+		</defs>
+		<clippath id="SVGID_2_">
+			<use xlink:href="#SVGID_1_" overflow="visible"></use>
+		</clippath>
+	</g>
+	<g enable-background="new    ">
+		<defs>
+			<ellipse id="SVGID_3_" enable-background="new    " cx="-374.1" cy="28.3" rx="0" ry="28.2"></ellipse>
+		</defs>
+		<clippath id="SVGID_4_">
+			<use xlink:href="#SVGID_3_" overflow="visible"></use>
+		</clippath>
+		<g clip-path="url(#SVGID_4_)">
+			<g>
+				<g>
+					<g>
+						<polyline fill="none" points="-374.1,-41.8 -374.1,-19.4 -374.1,3 -374.1,-19.4 -374.1,-41.8 						"></polyline>
+						<polyline fill="none" points="-374.1,5.9 -374.1,28.3 -374.1,50.7 -374.1,28.3 -374.1,5.9 						"></polyline>
+						<polyline fill="none" points="-374.1,53.5 -374.1,75.9 -374.1,98.3 -374.1,75.9 -374.1,53.5 						"></polyline>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+	<g enable-background="new    ">
+		<defs>
+			<path id="SVGID_5_" enable-background="new    " d="M-374.1,0.1h912.6c0,0,0,12.6,0,28.2c0,15.6,0,28.2,0,28.2h-912.6
+				c0,0,0-12.6,0-28.2C-374.1,12.7-374.1,0.1-374.1,0.1z"></path>
+		</defs>
+		<clippath id="SVGID_6_">
+			<use xlink:href="#SVGID_5_" overflow="visible"></use>
+		</clippath>
+	</g>
+	<g enable-background="new    ">
+		<defs>
+			<path id="SVGID_7_" enable-background="new    " d="M-374.1,56.4c0,0,0-12.6,0-28.2c0-15.6,0-28.2,0-28.2h912.6
+				c0,0,0,12.6,0,28.2c0,15.6,0,28.2,0,28.2C264.8,56.4-100.3,56.4-374.1,56.4z"></path>
+		</defs>
+		<clippath id="SVGID_8_">
+			<use xlink:href="#SVGID_7_" overflow="visible"></use>
+		</clippath>
+		<g clip-path="url(#SVGID_8_)">
+			<g id="XMLID_1_">
+				<g>
+					<path fill="#EB7077" d="M95,30.3h16.3c-5.7,1.9-7.5,5.7-8.5,16.5c-0.7,7.7-4.2,9.7-4.2,9.7c-2.6,0-5.2-11.1-7.5-22.9
+						C92,31.6,93.2,30.6,95,30.3z"></path>
+					<path fill="#EB7077" d="M98.5,56.4H82.2c2.9,0,4.9-5.5,6.1-12.5c0.8-4.7,1.6-8.1,2.7-10.4C93.3,45.3,95.9,56.4,98.5,56.4z"></path>
+					<path fill="#F6A2AD" d="M91,33.5c-1.2,2.2-2,5.7-2.7,10.4c-1.2,7-3.2,12.5-6.1,12.5c-3.1-0.7-5.6-12.5-8.9-30.5
+						c-0.1-0.6-0.2-1.1-0.3-1.7c2.5-13,5.1-24.2,7.7-24.2h0.9c3.1,0.7,5.6,12.5,8.9,30.5C90.7,31.6,90.8,32.5,91,33.5z"></path>
+					<path fill="#EB7077" d="M65.3,0.1h15.4c-2.6,0-5.3,11.2-7.7,24.2C70.7,12.1,68,0.1,65.3,0.1z"></path>
+					<path fill="#EB7077" d="M73,24.3c-0.2,1.3-0.5,2.6-0.7,4c-3.7,20.2-5.9,27.6-8.5,28.2c-2.9,0-5.7-13.1-8-25.9
+						c0-0.2-0.1-0.4-0.1-0.6c0.1-0.6,0.2-1.1,0.3-1.7C59.7,8,61.9,0.7,64.4,0.1h0.9C68,0.1,70.7,12.1,73,24.3z"></path>
+					<path fill="#EB7077" d="M63.8,56.4H47.5c2.8,0,5.6-12.5,8.1-26.5c0,0.2,0.1,0.4,0.1,0.6C58.1,43.4,61,56.4,63.8,56.4z"></path>
+					<path fill="#F6A2AD" d="M55.7,30c-2.6,14-5.4,26.5-8.1,26.5C44.4,55.7,42,43.9,38.6,26c-0.1-0.6-0.2-1.1-0.3-1.7
+						c2.5-13,5.1-24.2,7.7-24.2h0.9C50,0.8,52.4,12.4,55.7,30z"></path>
+					<path fill="#EB7077" d="M30.6,0.1H46c-2.6,0-5.2,11.2-7.7,24.2C36,12.1,33.3,0.1,30.6,0.1z"></path>
+					<path fill="#EB7077" d="M38.3,24.3c-0.2,1.3-0.5,2.6-0.7,4c-3.7,20.2-5.9,27.6-8.5,28.2c-2.9,0-1.8-0.5-3.6-8.6
+						c-1.8-8.1-3.2-12.9-5.1-15.4c0.3-1.4,0.5-2.8,0.8-4.2C25,8,27.2,0.7,29.7,0.1h0.9C33.3,0.1,36,12.1,38.3,24.3z"></path>
+					<path fill="#EB7077" d="M29.1,56.4H12.8c2.6,0,5.2-11.1,7.7-24c1.8,2.5,3.2,7.3,5.1,15.4C27.4,55.9,26.2,56.4,29.1,56.4z"></path>
+					<path fill="#F6A2AD" d="M20.5,32.4c-2.5,12.9-5.1,24-7.7,24c-0.3-0.4-2.1,0-3.8-10c-1.5-9.2-4.2-15-8.6-16.1h16.3
+						C18.3,30.4,19.4,31,20.5,32.4z"></path>
+				</g>
+				<g>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
+<path fill="none" d="M194.8,54.9"></path>
+<g enable-background="new    ">
+	<g enable-background="new    ">
+		<defs>
+			<ellipse id="SVGID_9_" enable-background="new    " cx="538.6" cy="28.2" rx="0" ry="28.2"></ellipse>
+		</defs>
+		<clippath id="SVGID_10_">
+			<use xlink:href="#SVGID_9_" overflow="visible"></use>
+		</clippath>
+	</g>
+	<g enable-background="new    ">
+		<defs>
+			<ellipse id="SVGID_11_" enable-background="new    " cx="-374.1" cy="28.2" rx="0" ry="28.2"></ellipse>
+		</defs>
+		<clippath id="SVGID_12_">
+			<use xlink:href="#SVGID_11_" overflow="visible"></use>
+		</clippath>
+		<g clip-path="url(#SVGID_12_)">
+			<g>
+				<g>
+					<g>
+						<polyline fill="none" points="-374.1,-41.9 -374.1,-19.5 -374.1,2.9 -374.1,-19.5 -374.1,-41.9 						"></polyline>
+						<polyline fill="none" points="-374.1,5.8 -374.1,28.2 -374.1,50.6 -374.1,28.2 -374.1,5.8 						"></polyline>
+						<polyline fill="none" points="-374.1,53.4 -374.1,75.8 -374.1,98.2 -374.1,75.8 -374.1,53.4 						"></polyline>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+	<g enable-background="new    ">
+		<defs>
+			<path id="SVGID_13_" enable-background="new    " d="M-374.1,0h912.6c0,0,0,12.6,0,28.2s0,28.2,0,28.2h-912.6c0,0,0-12.6,0-28.2
+				S-374.1,0-374.1,0z"></path>
+		</defs>
+		<clippath id="SVGID_14_">
+			<use xlink:href="#SVGID_13_" overflow="visible"></use>
+		</clippath>
+	</g>
+	<g enable-background="new    ">
+		<defs>
+			<path id="SVGID_15_" enable-background="new    " d="M-374.1,56.3c0,0,0-12.6,0-28.2s0-28.2,0-28.2h912.6c0,0,0,12.6,0,28.2
+				s0,28.2,0,28.2C264.8,56.3-100.3,56.3-374.1,56.3z"></path>
+		</defs>
+		<clippath id="SVGID_16_">
+			<use xlink:href="#SVGID_15_" overflow="visible"></use>
+		</clippath>
+		<g clip-path="url(#SVGID_16_)">
+			<g id="XMLID_2_">
+				<g>
+					<path fill="#EB7077" d="M95,30.2h16.3c-5.7,1.9-7.5,5.7-8.5,16.5c-0.7,7.7-4.2,9.7-4.2,9.7c-2.6,0-5.2-11.1-7.5-22.9
+						C92,31.5,93.2,30.5,95,30.2z"></path>
+					<path fill="#EB7077" d="M98.5,56.3H82.2c2.9,0,4.9-5.5,6.1-12.5c0.8-4.7,1.6-8.1,2.7-10.4C93.3,45.2,95.9,56.3,98.5,56.3z"></path>
+					<path fill="#F6A2AD" d="M91,33.4c-1.2,2.2-2,5.7-2.7,10.4c-1.2,7-3.2,12.5-6.1,12.5c-3.1-0.7-5.6-12.5-8.9-30.5
+						c-0.1-0.6-0.2-1.1-0.3-1.7C75.5,11.2,78.1,0,80.7,0h0.9c3.1,0.7,5.6,12.5,8.9,30.5C90.7,31.4,90.8,32.4,91,33.4z"></path>
+					<path fill="#EB7077" d="M65.3,0h15.4c-2.6,0-5.3,11.2-7.7,24.2C70.7,12,68,0,65.3,0z"></path>
+					<path fill="#EB7077" d="M73,24.2c-0.2,1.3-0.5,2.6-0.7,4c-3.7,20.2-5.9,27.6-8.5,28.2c-2.9,0-5.7-13.1-8-25.9
+						c0-0.2-0.1-0.4-0.1-0.6c0.1-0.6,0.2-1.1,0.3-1.7C59.7,7.9,61.9,0.6,64.4,0h0.9C68,0,70.7,12,73,24.2z"></path>
+					<path fill="#EB7077" d="M63.8,56.3H47.5c2.8,0,5.6-12.5,8.1-26.5c0,0.2,0.1,0.4,0.1,0.6C58.1,43.3,61,56.3,63.8,56.3z"></path>
+					<path fill="#F6A2AD" d="M55.7,29.9c-2.6,14-5.4,26.5-8.1,26.5c-3.1-0.7-5.6-12.5-8.9-30.5c-0.1-0.6-0.2-1.1-0.3-1.7
+						C40.8,11.2,43.4,0,46,0h0.9C50,0.7,52.4,12.2,55.7,29.9z"></path>
+					<path fill="#EB7077" d="M30.6,0H46c-2.6,0-5.2,11.2-7.7,24.2C36,12,33.3,0,30.6,0z"></path>
+					<path fill="#EB7077" d="M38.3,24.2c-0.2,1.3-0.5,2.6-0.7,4c-3.7,20.2-5.9,27.6-8.5,28.2c-2.9,0-1.8-0.5-3.6-8.6
+						c-1.8-8.1-3.2-12.9-5.1-15.4c0.3-1.4,0.5-2.8,0.8-4.2C25,7.9,27.2,0.6,29.7,0h0.9C33.3,0,36,12,38.3,24.2z"></path>
+					<path fill="#EB7077" d="M29.1,56.3H12.8c2.6,0,5.2-11.1,7.7-24c1.8,2.5,3.2,7.3,5.1,15.4C27.4,55.8,26.2,56.3,29.1,56.3z"></path>
+					<path fill="#F6A2AD" d="M20.5,32.3c-2.5,12.9-5.1,24-7.7,24c-0.3-0.4-2.1,0-3.8-10c-1.5-9.2-4.2-15-8.6-16.1h16.3
+						C18.3,30.2,19.4,30.9,20.5,32.3z"></path>
+				</g>
+				<g>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+  </section>
+  <ul class="nav clearfix">
+    <li><a href="tonggao">通告</a></li>
+    <li><a href="http://www.materialscss.com/start">快速上手</a></li>
+    <li class="sidebar-collapsible">
+      <ul class="collapsible collapsible-accordion">
+        <li>
+          <a class="collapsible-header  waves-effect waves-teal">CSS</a>
+          <div class="collapsible-body" style="">
+            <ul>
+              <li><a href="http://www.materialscss.com/color">颜色</a></li>
+              <li><a href="http://www.materialscss.com/grid">网格</a></li>
+              <li><a href="http://www.materialscss.com/helpers">帮助类</a></li>
+              <li><a href="http://www.materialscss.com/media-css">媒体</a></li>
+              <!--<li><a href="sass">Sass</a></li>-->
+              <li><a href="http://www.materialscss.com/shadow">阴影</a></li>
+              <li><a href="http://www.materialscss.com/table">表格</a></li>
+              <li><a href="http://www.materialscss.com/typography">排版</a></li>
+            </ul>
+          </div>
+        </li>
+        <li><a class="collapsible-header waves-effect waves-teal">组件</a>
+
+          <div class="collapsible-body" style="">
+            <ul>
+              <li><a href="http://www.materialscss.com/badges">徽章</a></li>
+              <li><a href="http://www.materialscss.com/buttons">按钮</a></li>
+              <li><a href="http://www.materialscss.com/cards">卡片</a></li>
+              <li><a href="http://www.materialscss.com/collections">集合</a></li>
+              <li><a href="http://www.materialscss.com/footer">页脚</a></li>
+              <li><a href="http://www.materialscss.com/forms">表单</a></li>
+              <li><a href="http://www.materialscss.com/icons">图标</a></li>
+              <li><a href="http://www.materialscss.com/navbar">顶部导航条</a></li>
+              <li><a href="http://www.materialscss.com/pagination">分页</a></li>
+              <li><a href="http://www.materialscss.com/preloader">加载动画</a></li>
+            </ul>
+          </div></li>
+        <li class=""><a class="collapsible-header waves-effect waves-teal">Javascript</a>
+          <div class="collapsible-body" style="display: none;">
+            <ul>
+              <li><a href="http://www.materialscss.com/collapsible">折叠</a></li>
+              <li class="active"><a href="http://www.materialscss.com/dialogs">对话框</a></li>
+              <li><a href="http://www.materialscss.com/dropdown">下拉框</a></li>
+              <li><a href="http://www.materialscss.com/media">多媒体</a></li>
+              <li><a href="http://www.materialscss.com/modals">模态框</a></li>
+              <li><a href="http://www.materialscss.com/parallax">视差滚动</a></li>
+              <li><a href="http://www.materialscss.com/pushpin">图钉</a></li>
+              <li><a href="http://www.materialscss.com/scrollfire">滚动触发</a></li>
+              <li><a href="http://www.materialscss.com/scrollspy">滚动监听</a></li>
+              <li><a href="http://www.materialscss.com/side-nav">导航</a></li>
+              <li><a href="http://www.materialscss.com/tabs">标签</a></li>
+              <li><a href="http://www.materialscss.com/transitions">渐现</a></li>
+              <li><a href="http://www.materialscss.com/waves">波浪特效</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </li>
+    <li><a href="http://www.materialscss.com/mobile">手机</a></li>
+    <li><a href="http://www.materialscss.com/showcase">案例</a></li>
+  </ul>
+</aside>
+
+<main>
+ <div id="index-banner" class="index-banner section no-pad-bot primary-bg">
+  <div class="container">
+    <h1 class=" center-on-small-only  text-light ">对话框</h1>
+    <br>
+    <br>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="section col s12 m9 l10">
+      <div id="toast" class="section scrollspy">
+        <p class="caption">对话款一开始并不在页面上显示出来，但是当你做某些操作后，会在页面上慢慢的显示出来以展示更多的信息。</p>
+        <h2 class="header">Toasts</h2>
+        <p>Materialize提供了非常简单的方法，来弹出一些信息，同时也不会让用户感到突兀。这些Toasts显示的位置和大小会随着你的设备的不同而改变。</p>
+        <a class="waves-effect waves-light btn" onclick="Materialize.toast(&#39;I am a toast&#39;, 4000)">Toast!</a>
+        <p>在JavaScript中调用Materialize.toast()方法来使用。</p>
+        <pre class=" language-javascript"><code class=" language-javascript">
+  <span class="token comment" spellcheck="true">// Materialize.toast(message, displayLength, className, completeCallback);
+</span>  Materialize<span class="token punctuation">.</span><span class="token function">toast</span><span class="token punctuation">(</span><span class="token string">'I am a toast!'</span><span class="token punctuation">,</span> <span class="token number">4000</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 4000是Toast持续时间
+</span>        </code></pre>
+        <p>一种方法是在onclick上添加这个方法。</p>
+        <pre class=" language-markup"><code class=" language-markup">
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>btn<span class="token punctuation">"</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Materialize.toast('I am a toast', 4000)<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Toast!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+        </code></pre>
+
+        <h4>自定义HTML</h4>
+        <p>传入一个自定义的HTML标签作为第一个参数。下面的例子中，我们传入了一段文字和按钮。如果你是在外部引用Javascript，可以不用单引号。</p>
+        <a class="waves-effect waves-light btn" onclick="Materialize.toast(&#39;&lt;span&gt;Item Deleted&lt;/span&gt;&lt;a class=&quot;btn-flat yellow-text&quot; href=&quot;#1&quot;&gt;Undo&lt;/a&gt;&#39;, 5000)">Toast with Action</a>
+        <pre class=" language-markup"><code class=" language-markup">
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>waves-effect waves-light btn<span class="token punctuation">"</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Materialize.toast('&lt;span<span class="token punctuation">&gt;</span>Item Deleted&lt;/span<span class="token punctuation">&gt;</span>&lt;a class<span class="token punctuation">=</span>&amp;quot;btn-flat yellow-text&amp;quot; href<span class="token punctuation">=</span>&amp;quot;#!&amp;quot;<span class="token punctuation">&gt;</span>Undo&lt;a<span class="token punctuation">&gt;</span>', 5000)<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Toast!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+        </code></pre>
+
+        <h4>回调</h4>
+        <p>你可以在Toast结束时提供一个回调函数来执行。</p>
+        <a class="btn" onclick="Materialize.toast(&#39;I am a toast&#39;, 4000,&#39;&#39;,function(){alert(&#39;Your toast was dismissed&#39;)})">Toast!</a>
+        <pre class=" language-markup"><code class=" language-markup">
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>btn<span class="token punctuation">"</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Materialize.toast('I am a toast', 4000,'',function(){alert('Your toast was dismissed')})<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Toast!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+        </code></pre>
+
+        <h4>多种样式</h4>
+        <p>你可以非常简便的自定义toasts的样式，把样式名字作为一个函数参数传入到选项中即可。已经提供了一个圆角样式，当然你也可以自定义样式并应用上。</p>
+
+        <a class="waves-effect waves-light btn" onclick="Materialize.toast(&#39;I am a toast!&#39;, 3000, &#39;rounded&#39;)">Round Toast!</a>
+
+        <pre class=" language-javascript"><code class=" language-javascript">
+          Materialize<span class="token punctuation">.</span><span class="token function">toast</span><span class="token punctuation">(</span><span class="token string">'I am a toast!'</span><span class="token punctuation">,</span> <span class="token number">3000</span><span class="token punctuation">,</span> <span class="token string">'rounded'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 'rounded' is the class I'm applying to the toast
+</span>        </code></pre>
+      </div>
+
+
+
+      <!-- Tooltip Section -->
+      <div id="tooltip" class="scrollspy section">
+        <h2 class="header">工具提示</h2>
+
+        <p>工具提示是精简，富交互的文本提示。特别是当你用一个小图标时，提供一个工具提示能很方便的阐述这个小图标所具有的功能。</p>
+        <div class="row">
+          <a class="btn tooltipped col s4 offset-s4 l2 offset-l1" data-position="bottom" data-delay="50" data-tooltip="I am tooltip">底部</a>
+          <a class="btn tooltipped col s4 offset-s4 l2 offset-l1" data-position="top" data-delay="50" data-tooltip="I am tooltip">顶部</a>
+          <a class="btn tooltipped col s4 offset-s4 l2 offset-l1" data-position="left" data-delay="50" data-tooltip="I am tooltip">左边</a>
+          <a class="btn tooltipped col s4 offset-s4 l2 offset-l1" data-position="right" data-delay="50" data-tooltip="I am tooltip">右边</a>
+        </div>
+        <p>添加Tooltipeed class到你的元素上，同时添加top, bottom, left, right在data-tooltip属性上来控制元素的位置。</p>
+        <pre class=" language-markup"><code class=" language-markup">
+  <span class="token comment" spellcheck="true">&lt;!-- data-position can be : bottom, top, left, or right --&gt;</span>
+  <span class="token comment" spellcheck="true">&lt;!-- data-delay controls delay before tooltip shows (in milliseconds)--&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>btn tooltipped<span class="token punctuation">"</span></span> <span class="token attr-name">data-position</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>bottom<span class="token punctuation">"</span></span> <span class="token attr-name">data-delay</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>50<span class="token punctuation">"</span></span> <span class="token attr-name">data-tooltip</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>I am tooltip<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Hover me!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+        </code></pre>
+        <br>
+        <h4>初始化</h4>
+        <p>工具提示会自动的初始化，但是当你动态添加的时候，你需要重新激活它。</p>
+        <pre class=" language-javascript"><code class=" language-javascript">
+   <span class="token function">$</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ready</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+     <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'.tooltipped'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">tooltip</span><span class="token punctuation">(</span><span class="token punctuation">{</span>delay<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        </code></pre>
+      </div>
+    </div>
+
+    <!-- Table of contents -->
+    <div class="col hide-on-small-only m3 l2">
+      <div class="toc-wrapper pin-top" style="top: 0px;">
+        <div style="height: 1px;">
+          <ul class="section table-of-contents">
+            <li><a href="http://www.materialscss.com/dialogs#toast" class="active">Toasts</a></li>
+            <li><a href="http://www.materialscss.com/dialogs#tooltip">Tooltips</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</main>
+
+<footer class="page-footer">
+  <div class="container">
+
+    <div class="row">
+      <div class="col s12">
+        <h5 class="white-text">Materialize中文网</h5>
+        <p class="grey-text text-lighten-4">本网站所列开源项目的中文版文档全由Materialize中文网成员翻译整理，并全部遵循MIT协议发布。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-copyright">
+    <div class="container">
+      © 2015 Copyright
+    </div>
+  </div>
+</footer>
+
+
+<script src="/static/jquery.min.js"></script>
+<script src="/static/materialize.min.js"></script>
+<script src="/static/prism.js"></script>
+<script src="../static/app.js"></script>
+
+
+<div class="material-tooltip"><span>I am tooltip</span><div class="backdrop" style="top: 0px; left: 0px;"></div></div><div class="material-tooltip"><span>I am tooltip</span><div class="backdrop" style="top: 0px; left: 0px;"></div></div><div class="material-tooltip"><span>I am tooltip</span><div class="backdrop" style="top: 0px; left: 0px;"></div></div><div class="material-tooltip"><span>I am tooltip</span><div class="backdrop" style="top: 0px; left: 0px;"></div></div><div class="hiddendiv common"></div></body></html>
