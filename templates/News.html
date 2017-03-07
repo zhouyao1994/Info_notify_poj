@@ -1,86 +1,25 @@
 {% extends "base.html" %}
-{% import "layout_macro.html" as layout %}
 
 
 {% block body %}
-    <div class="container"><a href="#" id="nav-button" class="button-collapse top-nav circle hide-on-large-only"><i
-            class="mdi-navigation-menu"></i></a></div>
-    <aside id="nav-mobile" class="sidebar">
-        <section class="logo">
-        </section>
-        <ul class="nav clearfix">
-            <li><a href="/info/get/news">网页公告</a></li>
-            <li class="sidebar-collapsible">
-                <ul class="collapsible collapsible-accordion">
-                    <li>
-                        <a class="collapsible-header  waves-effect waves-teal">短信通知</a>
-                        <div class="collapsible-body" style="">
-                            <ul>
-                                <li><a href="#">已回复名单</a></li>
-                                <li><a href="#">未回复名单</a></li>
-                                <li><a href="#">时间统计</a></li>
-                                <li><a href="#">媒体</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </li>
-            <li><a href="#">反馈情况</a></li>
-            <li><a href="#">BBS论坛</a></li>
-            <li><a href="#">个人信息管理</a></li>
-            <li><a href="#">后台登录</a></li>
-        </ul>
-    </aside>
+    {{ super() }}
+{% endblock %}
 
-    <main>
-        <div class="index-banner section no-pad-bot primary-bg">
-            <div class="container">
-                <h1 class=" center-on-small-only  text-light center">通告</h1>
-                <br>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="section">
-
-                <!--   Promo Section   -->
-                <div class="row">
-                    {% for new in news %}
-                        <div class="col s12 m4">
-                            <br/>
-                            <div class="promo-caption">
-                                <div class="promo-caption">
-                                    {{ new.news_title }}
-                                    <i class="text-sm right-align">发送时间: {{ new.post_time }}</i>
-                                </div>
-                                <p class="light text-lg">{{ new.news_content }}</p>
-                            </div>
-                            <br/> <br/>
-                        </div>
-                    {% endfor %}
+{% block content %}
+    <div class="row">
+        {% for new in news %}
+            <div class="col s12 m4">
+                <br/>
+                <div class="promo-caption">
+                    <div class="promo-caption">
+                        {{ new.news_title }}
+                        <i class="text-sm right-align pink lighten-4">截止时间: {{ new.end_time }}</i>
+                    </div>
+                    <p class="light text-lg">{{ new.news_content }}</p>
+                    <p class="light text-sm right">发送时间：{{ new.post_time }}</p>
                 </div>
-                <div class="divider"></div>
+                <br/> <br/>
             </div>
-    </main>
-
-    <footer class="page-footer">
-        <div class="container">
-
-            <div class="row">
-                <div class="col s12">
-                    <h5 class="white-text">高效通知</h5>
-                    <p class="grey-text text-lighten-4">本网站所列开源项目由个人制作。</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-copyright">
-            <div class="container">
-                © 2017 Copyright
-            </div>
-        </div>
-    </footer>
-
-    <div class="hiddendiv common"></div>
-
+        {% endfor %}
+    </div>
 {% endblock %}

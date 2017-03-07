@@ -1,12 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-this is contact info
-{{ contact}}
+{% extends "base.html" %}
 
-</body>
-</html>
+
+{% block body %}
+    {{ super() }}
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        {% for contact in contacts %}
+            <div class="col s12 m3">
+                <div class="promo-caption">
+                    <div class="promo-caption">
+                        {{ contact.name }}
+                    </div>
+                    <p class="light text-lg">性别：{{ contact.gender }}</p>
+                    <p class="light text-lg">寝室号：{{ contact.room_id }}</p>
+                    <p class="light text-lg">手机号码：{{ contact.phone }}</p>
+                    <p class="light text-lg">家庭住址：{{ contact.address }}</p>
+                    <p class="light text-lg">是否是寝室长：{{ contact.is_roon_leader }}</p>
+{#                    <p class="light text-sm right">最后更新时间：{{ contact.room_id }}</p>#}
+                </div>
+                <br/>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

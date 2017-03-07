@@ -82,12 +82,12 @@ def contact():
     # for x in all_contact:
     #     contact_json.append(x.get_json())
     # rs_json= json.dumps(contact_json, ensure_ascii=False)
-    return render_template("Materialize1.html",news = all_contact)
+    return render_template("contact.html",contacts = all_contact)
 
 
 @app.errorhandler(404)
 def page_not_found(error):
-    return render_template('page_not_found.html'), 404
+    return render_template('404.html'), 404
 
 
 @app.route("/test")
