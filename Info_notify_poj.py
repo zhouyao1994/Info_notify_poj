@@ -5,7 +5,7 @@ from flask import (
     g, request, redirect, flash, Response, render_template, Markup)
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/test")
 def index():
     return render_template("index.html")
 
@@ -49,5 +49,12 @@ def contact():
 def page_not_found(error):
     return render_template('page_not_found.html'), 404
 
+@app.route("/")
+def  test():
+    return render_template("Materialize.html")
+@app.route("/tonggao")
+def test2():
+    return render_template("Materialize1.html")
+
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
