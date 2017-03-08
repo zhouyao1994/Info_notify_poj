@@ -1,21 +1,19 @@
 # coding:utf8
 # create by zhouyao
 # data: $
-
+# blueprint 导入设置
 from . import main
-from flask import Flask, render_template, url_for, redirect, flash
+from flask import render_template, url_for, redirect, flash
 from ..model import News, Contact, User
 from .. import db
 from form import LoginForm, RegisterForm
 from flask_login import login_user, logout_user, login_required
 
 
-# from .. import app
-
-
 @main.route("/")
 def index():
     return redirect(url_for("main.news_info"))
+
 
 
 @main.route("/info/get/news")
@@ -25,6 +23,7 @@ def news_info():
 
 
 @main.route("/info/get/contact")
+@login_required
 def contact():
     all_contact = Contact.query.all()
     return render_template("contact_table.html", contacts=all_contact)
@@ -48,6 +47,7 @@ def login():
         if user is not None and user.virify_password(loginForm.password.data):
             login_user(user)
             flash("login success")
+            return redirect(url_for("main.news_info"))
     return render_template("login.html", form=loginForm)
 
 
@@ -77,4 +77,4 @@ def log_out():
 @login_required
 def get_it():
     print "xxxxx"
-    return "this is a private page,should login"
+    return "this is a private page,should login. and now you are logged in ~"

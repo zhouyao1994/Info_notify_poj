@@ -4,7 +4,7 @@
 
 from werkzeug.security import generate_password_hash,check_password_hash
 from . import db
-# from . import login
+from . import login
 from flask_login import UserMixin
 
 
@@ -25,9 +25,9 @@ class User(UserMixin,db.Model):
     def virify_password(self,password):
         return check_password_hash(self.password_hash,password)
 
-# @login.user_loader
-# def load_user(username):
-#     return User.query.get(username)
+@login.user_loader
+def load_user(username):
+    return User.query.get(username)
 
 
 class Contact(db.Model):
