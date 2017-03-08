@@ -39,7 +39,7 @@ def page_not_found(e):
 
 @main.route("/test")
 def test():
-    return redirect(url_for("main.news_info"))
+    return "ok health"
 
 
 @main.route("/login", methods=['GET', 'POST'])
