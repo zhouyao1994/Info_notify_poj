@@ -2,12 +2,14 @@
 # create by zhouyao
 # data: $
 # blueprint 导入设置
-from . import main
 from flask import render_template, url_for, redirect, flash
+from flask_login import login_user, logout_user, login_required
+
+from form import LoginForm, RegisterForm, PersoninfoForm
+
+from . import main
 from ..model import News, Contact, User
 from .. import db
-from form import LoginForm, RegisterForm
-from flask_login import login_user, logout_user, login_required
 
 
 @main.route("/")
@@ -31,6 +33,7 @@ def contact():
 @main.app_errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), 404
+
 
 @main.app_errorhandler(500)
 def page_not_found(e):
@@ -81,3 +84,10 @@ def log_out():
 def get_it():
     print "xxxxx"
     return "this is a private page,should login. and now you are logged in ~"
+
+
+@main.route("/personal_info")
+@login_required
+def get_personal_info():
+    infoform = PersoninfoForm()
+    return render_template("Userinfo.html", form=infoform)

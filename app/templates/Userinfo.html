@@ -1,0 +1,78 @@
+{% extends "Base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+{% block body %}
+    {{ super() }}
+{% endblock %}
+{% block foot %}
+{% endblock %}
+
+{% block content_title %}
+    个人信息
+{% endblock %}
+
+{% block content %}
+    {% for message in get_flashed_messages() %}
+        <div class="alert alert-warning col-sm-6 row">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{ message }}
+        </div>
+    {% endfor %}
+
+
+    <div class="row">
+        <form>
+            <div class="col s8">
+                <div class="row">
+                    <div class="input-field col s4">
+                        {{ form.username.label }}
+                        <input id="username" type="text" class="form-control">
+                    </div>
+                    <div class="input-field col s4">
+                        {{ form.nick_name.label }}
+                        <input id="nick_name" type="text" class="validate">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s4">
+                        {{ form.phone.label }}
+                        <input id="phone" type="text" class="validate">
+                    </div>
+                    <div class="input-field col s4">
+                        {{ form.phone2.label }}
+                        <input id="phone2" type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s4">
+                        {{ form.birth_day.label }}
+                        <input id="birth_day" type="date" class="datepicker">
+                    </div>
+                    <div class="input-field col s4">
+                        <input id="address" type="text" class="form-control">
+                        {{ form.address.label }}
+                    </div>
+                </div>
+                <div class="btn">
+                    提交
+                </div>
+            </div>
+            <div class="col s4">
+                <div class="row">
+                    <img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2685615683,2618065508&fm=23&gp=0.jpg">
+                </div>
+                <div class="row">
+                    <form action="#">
+                        <div class="file-field input-field">
+                            <div class="btn sm">
+                                <span>图片上传</span>
+                                <input type="file"/>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}
