@@ -65,7 +65,7 @@ def register():
             flash("register sucess")
         else:
             flash("has registerec")
-    return render_template("register.html", form=registerform)
+    return render_template("Register.html", form=registerform)
 
 
 @main.route("/logout")
