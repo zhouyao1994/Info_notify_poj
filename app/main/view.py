@@ -70,7 +70,7 @@ def register():
 def log_out():
     logout_user()
     flash("you hava log out")
-    return redirect(url_for("main.register"))
+    return redirect(url_for("main.index"))
 
 
 @main.route("/get")
