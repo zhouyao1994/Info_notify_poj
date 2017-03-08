@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+
+{% block body %}
+    {{ super() }}
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <table class="striped centered">
+            <thead>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>寝室号</th>
+            <th>手机号码</th>
+            <th>家庭住址</th>
+            <th>是否是寝室长</th>
+            </thead>
+            <tbody>
+            {% for contact in contacts %}
+                <tr>
+                    <td class="light text-lg">{{ contact.name }}</td>
+                    <td class="light text-lg">{{ contact.gender }}</td>
+                    <td class="light text-lg">{{ contact.room_id }}</td>
+                    <td class="light text-lg">{{ contact.phone }}</td>
+                    <td class="light text-lg">{{ contact.address }}</td>
+                    <td class="light text-lg">{{ contact.is_roon_leader }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+{% endblock %}
+
+{% block content_title %}
+    通讯录
+{% endblock %}

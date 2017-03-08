@@ -1,19 +1,33 @@
-# coding:utf8
-from __future__ import unicode_literals
-from flask import Flask,url_for
-import os, json
-from flask import (
-    g, request, redirect, flash, Response, render_template, Markup)
+#coding:utf8
+#create by zhouyao 
+#data: $
 
-from flask.ext.sqlalchemy import SQLAlchemy
+from werkzeug.security import generate_password_hash,check_password_hash
+from . import db
+# from . import login
+from flask_login import UserMixin
 
-basedir = os.path.abspath(os.path.dirname(__file__))
-SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(basedir, "data.db")
 
-app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = SQLALCHEMY_DATABASE_URI
-app.config["SQLALCHEMY_COMMIT_ON_TEARDOWN"] = True
-db = SQLAlchemy(app)
+class User(UserMixin,db.Model):
+    ___tablename__ = "users"
+    id = db.Column(db.Integer,primary_key=True)
+    username = db.Column(db.String,unique=True,index=True)
+    password_hash = db.Column(db.String(128))
+
+    @property
+    def password(self):
+        raise AttributeError("password is not readable")
+
+    @password.setter
+    def password(self,passw):
+        self.password_hash = generate_password_hash(passw)
+
+    def virify_password(self,password):
+        return check_password_hash(self.password_hash,password)
+
+# @login.user_loader
+# def load_user(username):
+#     return User.query.get(username)
 
 
 class Contact(db.Model):
@@ -62,44 +76,3 @@ class News(db.Model):
             "news_content": self.news_content
         }
         return formate_jsion
-
-
-@app.route("/")
-def index():
-    return redirect(url_for("news_info"))
-
-
-@app.route("/info/get/news")
-def news_info():
-    all_news = News.query.all()
-    return render_template("News.html", news=all_news)
-
-
-@app.route("/info/get/contact")
-def contact():
-    contact_json = []
-    all_contact = Contact.query.all()
-    # for x in all_contact:
-    #     contact_json.append(x.get_json())
-    # rs_json= json.dumps(contact_json, ensure_ascii=False)
-    return render_template("contact.html",contacts = all_contact)
-
-
-@app.errorhandler(404)
-def page_not_found(error):
-    return render_template('404.html'), 404
-
-
-@app.route("/test")
-def test():
-     return redirect(url_for("news_info"))
-
-
-@app.route("/tonggao")
-def test2():
-    return render_template("Materialize1.html")
-
-
-if __name__ == "__main__":
-    db.create_all()
-    app.run(debug=True)
