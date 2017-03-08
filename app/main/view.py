@@ -15,7 +15,6 @@ def index():
     return redirect(url_for("main.news_info"))
 
 
-
 @main.route("/info/get/news")
 def news_info():
     all_news = News.query.all()
@@ -26,12 +25,16 @@ def news_info():
 @login_required
 def contact():
     all_contact = Contact.query.all()
-    return render_template("contact_table.html", contacts=all_contact)
+    return render_template("Contact.html", contacts=all_contact)
 
 
-@main.errorhandler(404)
-def page_not_found(error):
+@main.app_errorhandler(404)
+def page_not_found(e):
     return render_template('404.html'), 404
+
+@main.app_errorhandler(500)
+def page_not_found(e):
+    return render_template('404.html'), 500
 
 
 @main.route("/test")

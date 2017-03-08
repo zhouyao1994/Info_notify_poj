@@ -1,6 +1,6 @@
-#coding:utf8
-#create by zhouyao 
-#data: $
+# coding:utf8
+# create by zhouyao
+# data: $
 from flask_script import Shell, Manager, Server
 from app import create_app
 from app import db
