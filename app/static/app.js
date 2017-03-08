@@ -2,7 +2,17 @@
  * Created by panew on 15-6-16.
  */
 $(function () {
+    var index=6;
+   // 胡圆的js
+  $(".get_more").click(function(){
 
+      for(var i=index;i<index+3;i++){ // 每次增加三条记录
+          var index_id="#"+i;
+          $(index_id)[0].style.display="block";    //设置div显示
+      }
+      index=index+3;
+
+    })
 
 
   // Floating-Fixed table of contents
@@ -107,4 +117,6 @@ $(function () {
   })
 
 });
+
+
 

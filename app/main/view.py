@@ -18,7 +18,22 @@ def index():
 @main.route("/info/get/news")
 def news_info():
     all_news = News.query.all()
-    return render_template("News.html", news=all_news)
+    return render_template("News.html", news=all_news, i=len(all_news))
+
+@main.route("/info/get/more_info")
+def more_info():
+    more_news = News.query.limit(3).offset(3).all()
+    # json
+    # for new in more_news:
+
+    return more_news
+    # print str(News.query.limit(3))
+    # print more_news
+    # print '查询成功','长度为', more_news.count(),'\n'
+    # print '数据类型为',type(more_news)
+    #
+    # return more_news
+
 
 
 @main.route("/info/get/contact")
