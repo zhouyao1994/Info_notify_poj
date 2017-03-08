@@ -2,12 +2,14 @@
 # create by zhouyao
 # data: $
 # blueprint 导入设置
-from . import main
 from flask import render_template, url_for, redirect, flash
+from flask_login import login_user, logout_user, login_required
+
+from form import LoginForm, RegisterForm, PersoninfoForm
+
+from . import main
 from ..model import News, Contact, User
 from .. import db
-from form import LoginForm, RegisterForm
-from flask_login import login_user, logout_user, login_required
 
 
 @main.route("/")
@@ -18,7 +20,22 @@ def index():
 @main.route("/info/get/news")
 def news_info():
     all_news = News.query.all()
-    return render_template("News.html", news=all_news)
+    return render_template("News.html", news=all_news, i=len(all_news))
+
+@main.route("/info/get/more_info")
+def more_info():
+    more_news = News.query.limit(3).offset(3).all()
+    # json
+    # for new in more_news:
+
+    return more_news
+    # print str(News.query.limit(3))
+    # print more_news
+    # print '查询成功','长度为', more_news.count(),'\n'
+    # print '数据类型为',type(more_news)
+    #
+    # return more_news
+
 
 
 @main.route("/info/get/contact")
@@ -31,6 +48,7 @@ def contact():
 @main.app_errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), 404
+
 
 @main.app_errorhandler(500)
 def page_not_found(e):
@@ -81,3 +99,10 @@ def log_out():
 def get_it():
     print "xxxxx"
     return "this is a private page,should login. and now you are logged in ~"
+
+
+@main.route("/personal_info")
+@login_required
+def get_personal_info():
+    infoform = PersoninfoForm()
+    return render_template("Userinfo.html", form=infoform)

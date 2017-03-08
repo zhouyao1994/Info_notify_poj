@@ -7,21 +7,44 @@
 
 {% block content %}
     <div class="row">
-        {% for new in news %}
+     <div class="section"></div>
+     <div class="section"></div>
+         {% for index in range(0,i) %}
             <div class="col s12 m4">
                 <br/>
+                {% if(index<6) %}
                 <div class="promo-caption">
                     <div class="promo-caption">
-                        {{ new.news_title }}
-                        <i class="text-sm right-align pink lighten-4">截止时间: {{ new.end_time }}</i>
+                        {{ news[index].news_title  }}
+                        <i class="text-sm right-align pink lighten-4">截止时间: {{ news[index].end_time }}</i>
                     </div>
-                    <p class="light text-lg">{{ new.news_content }}</p>
-                    <p class="light text-sm right">发送时间：{{ new.post_time }}</p>
+                    <p class="light text-lg">{{ news[index].news_content }}</p>
+                    <p class="light text-sm right">发送时间：{{ news[index].post_time }}</p>
                 </div>
+                {% endif %}
+                {% if(index>=6) %}
+                <div class="promo-caption" style="display: none" id={{ index }}>
+                    <div class="promo-caption">
+                        {{ news[index].news_title  }}
+                        <i class="text-sm right-align pink lighten-4">截止时间: {{ news[index].end_time }}</i>
+                    </div>
+                    <p class="light text-lg">{{ news[index].news_content }}</p>
+                    <p class="light text-sm right">发送时间：{{ news[index].post_time }}</p>
+                </div>
+                {% endif %}
                 <br/> <br/>
             </div>
         {% endfor %}
+
+
     </div>
+
+    <div>你好</div>
+    <div class="center"> <a href="javascript:;" class="get_more">::点击加载更多内容::</a></div>
+
+    <div>居中不起作用</div>
+    <div class="section"></div>
+
 {% endblock %}
 
 {% block content_title %}
