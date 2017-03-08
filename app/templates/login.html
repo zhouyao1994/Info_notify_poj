@@ -1,9 +1,18 @@
-{% extends "base_.html" %}
+{% extends "base.html" %}
 {% import "bootstrap/wtf.html" as wtf %}
 
 
-{% block content %}
+{% block body %}
+    {{ super() }}
+{% endblock %}
+{% block foot %}
+{% endblock %}
 
+{% block content_title %}
+    欢迎，请登陆～
+{% endblock %}
+
+{% block content %}
     {% for message in get_flashed_messages() %}
         <div class="alert alert-warning col-sm-6 row">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -19,7 +28,4 @@
             {{ wtf.quick_form(form) }}
         </div>
     </div>
-
-
-
 {% endblock %}

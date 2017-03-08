@@ -16,7 +16,7 @@ class LoginForm(Form):
 
 
 class RegisterForm(Form):
-    username = StringField(_("username"), validators=[Required(), Length(1, 64)])
-    password = PasswordField(_("password"), validators=[Required(),EqualTo("password2",message="tesssss")])
-    password2 = PasswordField(_("repassword"), validators=[Required()])
-    submit = SubmitField(_("submit"))
+    username = StringField(_("用户名"), validators=[Required(), Length(1, 64)])
+    password = PasswordField(_("密码"), validators=[Required(),EqualTo("password2",message="tesssss")])
+    password2 = PasswordField(_("请再输入一次"), validators=[Required()])
+    submit = SubmitField(_("提交"))
