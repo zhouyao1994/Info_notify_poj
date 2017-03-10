@@ -11,7 +11,7 @@ ACCOUNT_STATE_URL = "http://sms-api.luosimao.com/v1/status.json"
 
 AUTH = ("api", "key-9fdabcb605e39b8d623a8592e19a700c")
 
-NOTIFY_SIGN = "【计算机系通知】"
+JSJXTZ = "【计算机系通知】"
 
 class Message():
     """
@@ -109,7 +109,7 @@ def lsm_send_message(phone, message, sign,auth):
 
 if __name__ == "__main__":
     phone_list = [13123616850]
-    message = "你好，这是周耀发送的测试通知。测试通知。测试通知"
-    sign = NOTIFY_SIGN
+    message = "你好，xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    sign = JSJXTZ
     lsm_send_message(phone=phone_list, message=message, sign=sign,auth=AUTH)
     get_account_stat()  # print "剩余条数:
