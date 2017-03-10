@@ -13,6 +13,21 @@ $(function () {
       index=index+3;
 
     })
+  $("#sumbit").click(function(){
+      // alert("点击提交进来");
+      var list=$("input");
+      var listid=new Array();
+      for(var i=0,k=0; i<list.length;i++){
+          if(list[i].checked==true){
+              // alert("被选择"+list[i].id);
+              listid[k]=list[i].id;
+              k++;
+          }else {
+              // alert("这个没有被选择")
+          }
+      }
+      window.location.href="/send/name?listid="+listid;
+  })
 
 
   // Floating-Fixed table of contents

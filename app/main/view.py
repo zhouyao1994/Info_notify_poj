@@ -2,7 +2,7 @@
 # create by zhouyao
 # data: $
 # blueprint 导入设置
-from flask import render_template, url_for, redirect, flash
+from flask import render_template, url_for, redirect, flash, request
 from flask_login import login_user, logout_user, login_required
 
 from form import LoginForm, RegisterForm, PersoninfoForm
@@ -106,3 +106,12 @@ def get_it():
 def get_personal_info():
     infoform = PersoninfoForm()
     return render_template("Userinfo.html", form=infoform)
+
+ # writtered by hy
+@main.route("/send/name")
+@login_required
+def get_listid():
+    listid = request.args.get('listid')
+    # for id in listid:     #获取id成功
+    #     print id
+    return render_template("404.html")
