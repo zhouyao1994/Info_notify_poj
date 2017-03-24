@@ -112,6 +112,9 @@ def get_personal_info():
 @login_required
 def get_listid():
     listid = request.args.get('listid')
-    # for id in listid:     #获取id成功
-    #     print id
+    if listid:
+        ids_to_send = listid.split(",")
+        phons_to_send =[]
+        for items in ids_to_send:
+            print Contact.query.get(items).phone
     return render_template("404.html")
